@@ -26,9 +26,16 @@ export default Ember.Component.extend({
       }
 
       if (!this.isDestroying) {
-        this.destroy();
+        this.destroySelf();
       }
     });
   },
 
+  destroySelf() {
+    if (this.remove) {
+      this.destroy();
+    } else {
+      this.element.remove();
+    }
+  }
 });
