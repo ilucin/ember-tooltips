@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/tooltip-on-parent';
 
-const { computed, run, get } = Ember;
+const { computed, run, get, $ } = Ember;
 
 export default Ember.Component.extend({
   attributeBindings: ['style'],
@@ -35,7 +35,7 @@ export default Ember.Component.extend({
     if (this.remove) {
       this.destroy();
     } else {
-      this.element.remove();
+      $(this.element).remove();
     }
   }
 });
